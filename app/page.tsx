@@ -21,7 +21,7 @@ export default function Home() {
       </div>
 
       <div className="flex flex-col items-center md:items-start justify-center md:justify-end md:pb-12 pt-60 h-[580px] md:h-screen md:px-36 text-white">
-        <h1 className="hidden md:block text-4xl md:text-7xl font-bold leading-17">
+        <h1 className="hidden md:block text-4xl md:text-7xl font-bold leading-17 drop-shadow drop-shadow-black/20">
             Pioneering Excellence <br />
             in Specialty Chemicals <br />
             & Industrial Solutions

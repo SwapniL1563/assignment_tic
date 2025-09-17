@@ -7,7 +7,7 @@ export default function CoreValues() {
         
         <div className="flex flex-col w-full md:w-1/2 gap-5">
           <p className="uppercase text-center text-xs md:text-sm md:tracking-widest text-gray-500">Core Values</p>
-          <h1 className="text-xl w-full md:text-4xl text-center font-bold leading-snug">
+          <h1 className="text-xl w-full md:text-4xl text-center md:text-start font-bold leading-snug">
             The <span className="text-green-700">Core</span> of Engineering <br className="hidden md:block"/>
             and Manufacturing <br className="hidden md:block" />
             <span className="text-green-700">Synergy.</span>

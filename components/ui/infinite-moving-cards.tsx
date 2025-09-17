@@ -74,17 +74,17 @@ export const InfiniteMovingCards = ({
         {items.map((item, idx) => (
           <div
             key={idx}
-            className="w-[300px] sm:w-[350px] md:w-[400px] lg:w-[450px] flex-shrink-0 rounded-2xl border border-gray-200 bg-white px-6 py-8 shadow-md"
+            className="w-[300px] sm:w-[350px] md:w-[400px] lg:w-[450px] flex-shrink-0 rounded-2xl border border-gray-200 bg-white px-6 py-8 shadow-lg"
           >
-            <div className="flex text-green-600 mb-3 text-lg">
+            <div className="flex text-[#10562C] mb-3 text-lg">
               {"★".repeat(item.stars)}
               {"☆".repeat(5 - item.stars)}
             </div>
-            <h3 className="font-semibold md:text-lg mb-2 text-gray-900">{item.title}</h3>
-            <p className="text-xs md:text-sm text-gray-700 leading-relaxed">{item.quote}</p>
+            <h3 className="font-semibold md:text-lg mb-2 text-black">{item.title}</h3>
+            <p className="text-xs md:text-sm text-[#848282] leading-relaxed">{item.quote}</p>
             <div className="mt-6 flex flex-col text-gray-500">
-              <span className="text-sm md:text-base text-black">{item.name}</span>
-              <span className="text-xs">{item.date}</span>
+              <h4 className="text-sm md:text-base text-gray-800 mb-1">{item.name}</h4>
+              <p className="text-sm text-[#848282]">{item.date}</p>
             </div>
           </div>
         ))}

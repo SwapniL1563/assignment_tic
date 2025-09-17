@@ -17,7 +17,14 @@ const pages = ["Home", "About", "Products", "Careers"];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-  const [activePage, setActivePage] = React.useState("Home"); // default active
+  const [activePage, setActivePage] = React.useState("Home");
+  const [elevate, setElevate] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => setElevate(window.scrollY > 10);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -32,19 +39,22 @@ function ResponsiveAppBar() {
     <AppBar
       position="fixed"
       sx={{
-        background: "transparent",
-        boxShadow: "none",
+        background: "transparent", 
+        boxShadow: "none",        
         color: "black",
         px: { xs: 2, md: 0 },
       }}
     >
-      <Container
+  
+   <Container
         sx={{
           width: { xs: "100%", md: "85%" },
           mx: "auto",
-          backgroundColor: { xs: "transparent", md: "white" },
+          backgroundColor: "white",
           borderRadius: "10px",
-          mt: 3, 
+          mt: 3,
+          transition: "box-shadow 0.3s ease",
+          boxShadow: elevate ? "0 4px 12px rgba(0,0,0,0.2)" : "none",
         }}
       >
         <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
@@ -54,7 +64,6 @@ function ResponsiveAppBar() {
 
           <Box
             sx={{
-              // flexGrow: 1,
               display: { xs: "none", md: "flex" },
               justifyContent: "center",
               gap: "20px",
@@ -63,14 +72,14 @@ function ResponsiveAppBar() {
             {pages.map((page) => (
               <Button
                 key={page}
-                disableRipple 
+                disableRipple
                 onClick={() => handleCloseNavMenu(page)}
                 sx={{
                   my: 1,
                   color: activePage === page ? "green" : "black",
                   fontSize: "1.1rem",
                   fontWeight: activePage === page ? "600" : "500",
-                  textTransform: "none !important", 
+                  textTransform: "none",
                 }}
               >
                 {page}
@@ -84,8 +93,8 @@ function ResponsiveAppBar() {
               disableRipple
               sx={{
                 backgroundColor: "#FCDE07",
-                fontSize:"1.1rem",
-                fontWeight:"500",
+                fontSize: "1.1rem",
+                fontWeight: "500",
                 color: "black",
                 borderRadius: "8px",
                 "&:hover": { backgroundColor: "#f5d742" },
@@ -105,7 +114,7 @@ function ResponsiveAppBar() {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               disableRipple
-              sx={{ color: "white", width:"50px"}}
+              sx={{ color: "black", width: "50px" }}
             >
               <MenuIcon />
             </IconButton>
