@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono,Open_Sans } from "next/font/google";
 import "./globals.css";
+import ThemeRegistry from "@/components/ThemeRegistry";
+import ResponsiveAppBar from "@/components/ui/ResponsiveAppbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
   subsets: ["latin"],
 });
 
@@ -19,15 +26,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${openSans.variable}`}>
+        <ThemeRegistry>
+          {children}
+        </ThemeRegistry>
       </body>
     </html>
   );
