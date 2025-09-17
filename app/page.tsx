@@ -1,8 +1,11 @@
+import Footer from "@/components/Footer";
 import HomeAboutSection from "@/components/HomeAboutSection";
 import BusiDivSection from "@/components/HomeBusinessDivsSection";
+import CoreValues from "@/components/HomeCoreValuesSection";
 import InternationalOperations from "@/components/HomeInternationalOperationSection";
 import HomeNetworkSection from "@/components/HomeNetworkSection";
 import GlobalPartnerships from "@/components/HomePartnershipSection";
+import Testimonials from "@/components/HomeTestimonial";
 import ResponsiveAppBar from "@/components/ui/ResponsiveAppbar";
 import Image from "next/image";
 
@@ -48,8 +51,9 @@ export default function Home() {
        <BusiDivSection/>
        <GlobalPartnerships/>
        <InternationalOperations/>
-
-
+       <CoreValues/>
+       <Testimonials/>
+       <Footer/>
       </div>
     </>
   );

@@ -13,7 +13,7 @@ export default function GlobalPartnerships() {
   ];
 
   return (
-    <section className="py-12 bg-white">
+    <section className="py-24 bg-white hidden md:block">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-2xl md:text-4xl font-bold mb-16">Global Partnerships</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 items-center justify-center">
