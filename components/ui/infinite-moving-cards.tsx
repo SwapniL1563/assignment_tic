@@ -36,14 +36,14 @@ export const InfiniteMovingCards = ({
 
     let pos = 0;
     let speedPx = speed === "fast" ? 1 : speed === "slow" ? 0.3 : 0.5;
-    if (direction === "right") speedPx = -speedPx;
+    if (direction === "left") speedPx = -speedPx;
 
     const step = () => {
       pos += speedPx;
       const halfWidth = scrollTrack.scrollWidth / 2;
 
-      if (direction === "left" && pos >= halfWidth) pos = 0;
-      if (direction === "right" && pos <= -halfWidth) pos = 0;
+      if (direction === "left" && pos <= -halfWidth) pos = 0;
+      if (direction === "right" && pos >= halfWidth) pos = 0;
 
       scrollTrack.style.transform = `translateX(${pos}px)`;
       animationRef.current = requestAnimationFrame(step);
