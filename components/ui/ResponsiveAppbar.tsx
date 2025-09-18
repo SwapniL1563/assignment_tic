@@ -12,13 +12,20 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-const pages = ["Home", "About", "Products", "Careers"];
+const pages = [
+  { label: "Home", path: "/" },
+  { label: "About", path: "/about" },
+  { label: "Products", path: "/product" },
+  { label: "Careers", path: "/career" },
+];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-  const [activePage, setActivePage] = React.useState("Home");
   const [elevate, setElevate] = React.useState(false);
+  const pathname = usePathname();
 
   React.useEffect(() => {
     const handleScroll = () => setElevate(window.scrollY > 10);
@@ -30,8 +37,7 @@ function ResponsiveAppBar() {
     setAnchorElNav(event.currentTarget);
   };
 
-  const handleCloseNavMenu = (page?: string) => {
-    if (page) setActivePage(page);
+  const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
@@ -39,14 +45,13 @@ function ResponsiveAppBar() {
     <AppBar
       position="fixed"
       sx={{
-        background: "transparent", 
-        boxShadow: "none",        
+        background: "transparent",
+        boxShadow: "none",
         color: "black",
         px: { xs: 2, md: 0 },
       }}
     >
-  
-   <Container
+      <Container
         sx={{
           width: { xs: "100%", md: "85%" },
           mx: "auto",
@@ -59,7 +64,9 @@ function ResponsiveAppBar() {
       >
         <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
           <Box sx={{ display: "flex", alignItems: "center" }}>
-            <Image src="/logo.png" alt="Logo" width={70} height={20} />
+            <Link href="/" style={{ display: "flex", alignItems: "center" }}>
+              <Image src="/logo.png" alt="Logo" width={70} height={20} />
+            </Link>
           </Box>
 
           <Box
@@ -70,20 +77,21 @@ function ResponsiveAppBar() {
             }}
           >
             {pages.map((page) => (
-              <Button
-                key={page}
-                disableRipple
-                onClick={() => handleCloseNavMenu(page)}
-                sx={{
-                  my: 1,
-                  color: activePage === page ? "green" : "black",
-                  fontSize: "1.1rem",
-                  fontWeight: activePage === page ? "600" : "500",
-                  textTransform: "none",
-                }}
-              >
-                {page}
-              </Button>
+              <Link key={page.label} href={page.path}>
+                <Button
+                  disableRipple
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 1,
+                    color: pathname === page.path ? "green" : "black",
+                    fontSize: "1.1rem",
+                    fontWeight: pathname === page.path ? "600" : "500",
+                    textTransform: "none",
+                  }}
+                >
+                  {page.label}
+                </Button>
+              </Link>
             ))}
           </Box>
 
@@ -125,25 +133,28 @@ function ResponsiveAppBar() {
               keepMounted
               transformOrigin={{ vertical: "top", horizontal: "left" }}
               open={Boolean(anchorElNav)}
-              onClose={() => handleCloseNavMenu()}
-              sx={{ display: { xs: "block", md: "none" } }}
+              onClose={handleCloseNavMenu}
+              sx={{ display: { xs: "block", md: "none" },marginRight:"10rem" , marginTop:"0.5rem", borderRadius:"14px"}}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={() => handleCloseNavMenu(page)}>
-                  <Typography
-                    textAlign="center"
-                    sx={{
-                      textTransform: "none",
-                      color: activePage === page ? "green" : "black",
-                      fontWeight: activePage === page ? 600 : 400,
-                    }}
-                  >
-                    {page}
-                  </Typography>
+                <MenuItem key={page.label} onClick={handleCloseNavMenu}>
+                  <Link href={page.path} style={{ width: "100%" }}>
+                    <Typography
+                      textAlign="center"
+                      sx={{
+                        textTransform: "none",
+                        color: pathname === page.path ? "green" : "black",
+                        fontWeight: pathname === page.path ? 600 : 400,
+                      }}
+                    >
+                      {page.label}
+                    </Typography>
+                  </Link>
                 </MenuItem>
               ))}
               <MenuItem>
                 <Button
+                  href="/"
                   fullWidth
                   disableRipple
                   variant="contained"

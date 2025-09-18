@@ -59,7 +59,7 @@ export default function BusiDivSection(){
           />
           <div className="absolute bottom-0 md:bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 flex flex-col md:flex-row justify-between items-center md:items-end">
             <h3 className="text-white cursor-default text-xl md:text-lg font-bold md:font-semibold pb-4 md:pb-0">{divisions[0].title}</h3>
-            <button className="bg-[#10562C] cursor-pointer md:bg-white text-white  md:text-[#10562C] text-sm px-6 py-2 md:px-4 md:py-1 mb-6 md:mb-0 rounded-full font-medium hover:bg-gray-200 transition">
+            <button className="bg-[#10562C] cursor-pointer md:bg-white md:hover:bg-[#10562C] md:hover:text-white text-white  md:text-[#10562C] text-sm px-6 py-2 md:px-4 md:py-1 mb-6 md:mb-0 rounded-full font-medium hover:bg-gray-200 transition">
               View more
             </button>
           </div>
@@ -78,7 +78,7 @@ export default function BusiDivSection(){
             />
             <div className="absolute bottom-0 md:bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 flex flex-col md:flex-row justify-between items-center md:items-end">
               <h3 className="text-white cursor-default text-xl md:text-lg font-bold md:font-semibold pb-4 md:pb-0">{item.title}</h3>
-              <button className="bg-[#10562C] cursor-pointer md:bg-white text-white  md:text-[#10562C] text-sm px-6 py-2 md:px-4 md:py-1 mb-6 md:mb-0 rounded-full font-medium hover:bg-gray-200 transition">
+              <button className="bg-[#10562C] cursor-pointer md:bg-white md:hover:bg-[#10562C] md:hover:text-white text-white  md:text-[#10562C] text-sm px-6 py-2 md:px-4 md:py-1 mb-6 md:mb-0 rounded-full font-medium hover:bg-gray-200 transition">
                 View more
               </button>
             </div>

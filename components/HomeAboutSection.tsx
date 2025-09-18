@@ -38,7 +38,7 @@ export default function HomeAboutSection() {
             Our international operations are based in Guangzhou, China, where we manage chemical and machinery procurement supported by our own local agent. We focus on trading and manufacturing high-quality chemicals sourced globally from Europe and South America.  
           </p>
           
-          <button className="mt-14 md:mt-6 bg-white text-black w-[40%] px-6 py-2 rounded-md hover:bg-gray-200 transition text-sm md:text-base">
+          <button className="mt-14 md:mt-6 bg-white text-black w-[40%] px-6 py-2 rounded-md hover:bg-gray-200 transition text-sm md:text-base cursor-pointer">
             View More
           </button>
         </div>

@@ -74,7 +74,7 @@ export const InfiniteMovingCards = ({
         {items.map((item, idx) => (
           <div
             key={idx}
-            className="w-[300px] sm:w-[350px] md:w-[400px] lg:w-[450px] flex-shrink-0 rounded-2xl border border-gray-200 bg-white px-6 py-8 shadow-sm hover:shadow-md transition"
+            className="w-[300px] sm:w-[350px] md:w-[400px] lg:w-[450px] flex-shrink-0 rounded-2xl border border-gray-200 bg-white px-6 py-8 shadow-sm hover:shadow-md transition cursor-pointer"
           >
             <div className="flex text-[#10562C] mb-3 text-lg">
               {"★".repeat(item.stars)}

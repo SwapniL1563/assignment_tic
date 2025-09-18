@@ -83,7 +83,7 @@ export default function Footer() {
             />
             <button
               type="submit"
-              className="bg-black text-white rounded-r-full px-6 py-2 text-sm hover:bg-gray-900 transition"
+              className="bg-black text-white rounded-r-full px-6 py-2 text-sm hover:bg-gray-900 transition cursor-pointer"
             >
               Get updates
             </button>

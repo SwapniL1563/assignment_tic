@@ -141,6 +141,6 @@
 
 .scroller .scroll-track > * {
   flex-shrink: 0;
-  margin-right: 1.5rem; /* gap-6 */
+  margin-right: 1.5rem; 
 }
 
