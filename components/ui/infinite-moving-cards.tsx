@@ -25,7 +25,7 @@ export const InfiniteMovingCards = ({
 }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | null>(null);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -40,19 +40,27 @@ export const InfiniteMovingCards = ({
 
     const step = () => {
       pos += speedPx;
-      const scrollWidthHalf = scrollTrack.scrollWidth / 2;
+      const halfWidth = scrollTrack.scrollWidth / 2;
 
-      if (direction === "left" && pos >= scrollWidthHalf) pos = 0;
-      if (direction === "right" && pos <= 0) pos = scrollWidthHalf;
+      if (direction === "left" && pos >= halfWidth) pos = 0;
+      if (direction === "right" && pos <= -halfWidth) pos = 0;
 
-      scrollTrack.style.transform = `translateX(-${pos}px)`;
+      scrollTrack.style.transform = `translateX(${pos}px)`;
       animationRef.current = requestAnimationFrame(step);
     };
 
     animationRef.current = requestAnimationFrame(step);
 
-    const handleMouseEnter = () => pauseOnHover && cancelAnimationFrame(animationRef.current!);
-    const handleMouseLeave = () => pauseOnHover && (animationRef.current = requestAnimationFrame(step));
+    const handleMouseEnter = () => {
+      if (pauseOnHover && animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+    const handleMouseLeave = () => {
+      if (pauseOnHover) {
+        animationRef.current = requestAnimationFrame(step);
+      }
+    };
 
     if (pauseOnHover) {
       container.addEventListener("mouseenter", handleMouseEnter);
@@ -60,7 +68,7 @@ export const InfiniteMovingCards = ({
     }
 
     return () => {
-      cancelAnimationFrame(animationRef.current!);
+      if (animationRef.current) cancelAnimationFrame(animationRef.current);
       if (pauseOnHover) {
         container.removeEventListener("mouseenter", handleMouseEnter);
         container.removeEventListener("mouseleave", handleMouseLeave);
