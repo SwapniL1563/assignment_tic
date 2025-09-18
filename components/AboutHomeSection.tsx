@@ -2,16 +2,16 @@ import Image from "next/image";
 
 export default function ExperienceSection() {
   return (
-    <section className="bg-white w-full px-6 md:px-16 py-24">
-      <div className="w-full md:max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start justify-between">
+    <section className="bg-white w-full px-6 md:px-16 pt-14 pb-6 md:py-24">
+      <div className="w-full md:max-w-7xl mx-auto grid md:grid-cols-2 gap-16 md:gap-12 items-start justify-between">
         <div className="flex flex-col items-center md:items-start justify-center md:justify-start">
           <p className="hidden md:block uppercase text-sm tracking-wide text-black mb-2">
             SABA GROUP
           </p>
-          <p className="block md:hidden text-sm tracking-wide text-black mb-2">
+          <p className="block md:hidden text-sm tracking-wide text-black mb-4 md:mb-2 ">
             Legacy
           </p>
-          <h2 className="text-2xl md:text-4xl text-center md:text-start font-bold text-gray-900 mb-6 w-2/3 md:w-3/4">
+          <h2 className="text-2xl md:text-4xl text-center md:text-start font-bold text-gray-900 mb-4 md:mb-6 w-2/3 md:w-3/4">
             With over <span className="text-[#10562C]">37+ Years</span> of Experience
           </h2>
           <p className="text-black text-center md:text-start leading-relaxed mb-4 text-sm md:text-base w-6/7 md:w-2/3">

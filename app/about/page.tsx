@@ -1,8 +1,18 @@
+import AchievementsGallery from "@/components/AboutAchievementGallery";
+import BoardOfDirectors from "@/components/AboutBoardSection";
 import ExperienceSection from "@/components/AboutHomeSection";
+import RepresentationSection from "@/components/AboutMapSection";
 import MissionSection from "@/components/AboutMissionSection";
 import SupportDelivery from "@/components/AboutSupportSection";
+import Footer from "@/components/Footer";
+import FAQSection from "@/components/ui/Accordion";
 import ResponsiveAppBar from "@/components/ui/ResponsiveAppbar";
 import Image from "next/image";
+
+const directors = [
+  { id: 1, name: "Mr. S.K. Sabapathy", title: "Managing Director", imageSrc: "/about_img10.jpg" },
+  { id: 2, name: "Mr. S. Baladitya Saba", title: "Director", imageSrc: "/about_img11.png" }
+];
 
 export default function About() {
   return (
@@ -30,6 +40,11 @@ export default function About() {
         <ExperienceSection/>
         <SupportDelivery/>
         <MissionSection/>
+        <RepresentationSection/>
+        <BoardOfDirectors items={directors}/>
+        <AchievementsGallery/>
+        <FAQSection/>
+        <Footer/>
        </div>
        
        </div>
