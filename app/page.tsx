@@ -31,11 +31,11 @@ export default function Home() {
         </h1>
 
       <div className="mt-6 md:mt-4">
-        <button className="text-sm md:text-lg px-4  md:px-20 py-2 md:py-4
+        <button className="text-sm md:text-lg px-4  md:px-20 py-2 md:py-4 cursor-pointer
            bg-[#10562C] rounded-tl-lg rounded-bl-lg font-semibold hover:bg-[#0e4b26]">
             Know more
         </button>
-        <button className="text-sm md:text-lg px-4 md:px-7 py-2 md:py-4 text-black bg-white hover:bg-[#dfdfdf] rounded-tr-lg rounded-br-lg font-semibold">
+        <button className="text-sm md:text-lg px-4 md:px-7 py-2 md:py-4 cursor-pointer text-black bg-white hover:bg-[#dfdfdf] rounded-tr-lg rounded-br-lg font-semibold">
             +
         </button>
       </div>

@@ -83,7 +83,7 @@ function ResponsiveAppBar() {
                   onClick={handleCloseNavMenu}
                   sx={{
                     my: 1,
-                    color: pathname === page.path ? "green" : "black",
+                    color: pathname === page.path ? "#10562C" : "black",
                     fontSize: "1.1rem",
                     fontWeight: pathname === page.path ? "600" : "500",
                     textTransform: "none",
@@ -143,7 +143,7 @@ function ResponsiveAppBar() {
                       textAlign="center"
                       sx={{
                         textTransform: "none",
-                        color: pathname === page.path ? "green" : "black",
+                        color: pathname === page.path ? "#10562C" : "black",
                         fontWeight: pathname === page.path ? 600 : 400,
                       }}
                     >
