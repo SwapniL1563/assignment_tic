@@ -18,7 +18,7 @@ import { usePathname } from "next/navigation";
 const pages = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
-  { label: "Products", path: "/product" },
+  { label: "Products", path: "/" },
   { label: "Careers", path: "/career" },
 ];
 

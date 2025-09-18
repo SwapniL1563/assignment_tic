@@ -25,7 +25,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="flex flex-col items-center  md:py-16 bg-gray-50">
+    <section className="flex flex-col items-center  md:py-16 bg-white">
       <h2 className="text-xl md:text-4xl font-bold mb-10">What our <span className="text-[#10562C]">Clients Say</span></h2>
       <InfiniteMovingCards items={testimonials} speed="normal" direction="left" pauseOnHover />
     </section>

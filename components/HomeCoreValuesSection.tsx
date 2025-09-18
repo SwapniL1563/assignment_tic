@@ -15,7 +15,7 @@ export default function CoreValues() {
         </div>
 
         <div className="grid grid-cols-2 gap-1 md:gap-6 w-full md:w-1/2">
-          <div className="bg-gray-50 rounded-2xl p-3 md:p-6 shadow-sm hover:shadow-md transition">
+          <div className="bg-white rounded-2xl p-3 md:p-6 shadow-sm hover:shadow-md transition">
             <Image src="/home_core_logo.png" alt="core_values" height={40} width={100} className="w-4 md:w-5 mb-2"/>
             <h2 className="font-semibold md:text-lg mb-2">Quality</h2>
             <p className="text-[#848282] text-xs md:text-sm">
@@ -24,7 +24,7 @@ export default function CoreValues() {
             </p>
           </div>
 
-          <div className="bg-gray-50 rounded-2xl p-3 md:p-6 shadow-sm hover:shadow-md transition">
+          <div className="bg-white rounded-2xl p-3 md:p-6 shadow-sm hover:shadow-md transition">
                         <Image src="/home_core_logo.png" alt="core_values" height={40} width={100} className="w-4 md:w-5 mb-2"/>
             <h2 className="font-semibold md:text-lg mb-2">Technology</h2>
             <p className="text-[#848282] text-xs md:text-sm">
@@ -33,7 +33,7 @@ export default function CoreValues() {
             </p>
           </div>
 
-          <div className="bg-gray-50 rounded-2xl p-3 md:p-6 shadow-sm hover:shadow-md transition">
+          <div className="bg-white rounded-2xl p-3 md:p-6 shadow-sm hover:shadow-md transition">
                         <Image src="/home_core_logo.png" alt="core_values" height={40} width={100} className="w-4 md:w-5 mb-2"/>
             <h2 className="font-semibold md:text-lg mb-2">Innovation</h2>
             <p className="text-[#848282] text-xs md:text-sm">
@@ -42,7 +42,7 @@ export default function CoreValues() {
             </p>
           </div>
 
-          <div className="bg-gray-50 rounded-2xl p-3 md:p-6 shadow-sm hover:shadow-md transition">
+          <div className="bg-white rounded-2xl p-3 md:p-6 shadow-sm hover:shadow-md transition">
                         <Image src="/home_core_logo.png" alt="core_values" height={40} width={100} className="w-4 md:w-5 mb-2"/>
             <h2 className="font-semibold md:text-lg mb-2">Sustainability</h2>
             <p className="text-[#848282] text-xs md:text-sm">

@@ -4,7 +4,7 @@ import { FaTwitter, FaTiktok, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#ECEFF3] text-gray-800">
+    <footer className="bg-white text-gray-800">
       <div className="mx-auto max-w-7xl px-6 py-16 grid gap-24 md:gap-12 grid-cols-1">
         <div className="space-y-4 flex flex-col md:flex-row justify-between w-full">
           <div className="flex flex-col w-full md:flex-row  items-start justify-around gap-10">
